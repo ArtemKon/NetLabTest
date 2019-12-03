@@ -1,0 +1,23 @@
+<div class="form">
+  <form class="form-group" [formGroup]="form" (ngSubmit) = "submit()">
+    <h2 class="form-group__items">Форма для тебя</h2>
+    <input class="form-group__items form-group__input" type="text" placeholder="Представтесь пожалуйста" formControlName="name">
+    <div class="validation" *ngIf="form.get('email').invalid && form.get('email').touched" >Введите email
+      <span class="validation__false"></span>
+    </div>
+    <div class="validation__true" *ngIf="form.get('email').valid"></div>
+    <input class="form-group__items form-group__input" type="text" placeholder="Введите ваш e-mail" formControlName="email">
+    <select class="form-group__items" formControlName="subMessage">
+      <option value="" disabled>Тема сообщения</option>
+      <option value="Тема 1">Тема 1</option>
+      <option value="Тема 2">Тема 2</option>
+      <option value="Тема 3">Тема 3</option>
+      <option value="Тема 4">Тема 4</option>
+    </select>
+    <textarea class="form-group__items form-group__textarea" placeholder="Введите сообщение"  formControlName="message" required></textarea>
+    
+    <button class="btn btn__remuve" type="button" (click)="onRemuve()">Cбросить</button>
+    <button class="btn btn__submite" type="submit" [disabled]="form.invalid" (click)="onBackPage()">Отправить</button>
+  </form>
+</div>
+

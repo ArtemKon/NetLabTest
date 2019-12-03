@@ -1,0 +1,15 @@
+<div class="form">
+  <form class="form-EditPage" [formGroup] = "form" (ngSubmit) = "submitEdit($event)">
+    <input class="form-EditPage__items form-EditPage__input" value="{{formDataEdit$.nameEdit}}" formControlName="nameEdit">
+    <input class="form-EditPage__items form-EditPage__input" value="{{formDataEdit$.emailEdit}}" formControlName="emailEdit">
+    <select class="form-EditPage__items"formControlName="subMessageEdit">
+        <option value="" disabled>Тема сообщения</option>
+        <option value="Тема 1">Тема 1</option>
+        <option value="Тема 2">Тема 2</option>
+        <option value="Тема 3">Тема 3</option>
+        <option value="Тема 4">Тема 4</option>
+      </select>
+      <textarea class="form-EditPage__items form-EditPage__textarea" value="{{formDataEdit$.messageEdit}}" formControlName="messageEdit"></textarea>
+      <button class="btn btn__submite" type="submit">Отправить</button>
+  </form>
+</div>

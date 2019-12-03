@@ -1,0 +1,16 @@
+<div class="homePage">
+  <div class="homePage__first"*ngIf="isString(FormData$.title); else formData"> 
+    <span  class="homePage__title">{{ FormData$.title }}</span>
+    <a routerLink="/form" class="homePage__btn">Заполнить форму</a>
+  </div>
+  <ng-template #formData>
+    <div class="homePage__dataContaiter">
+      <div class="homePage__formData">
+        <span><b>Фио:</b> {{ FormData$.name }}</span>
+        <span><b>Email:</b> {{ FormData$.email }}</span> 
+        <span><b>Тема:</b> {{ FormData$.subMessage }}</span>    
+      </div>
+    <a routerLink="/form/edit" class="homePage__btn">Изменить</a>
+    </div>
+  </ng-template>
+</div>

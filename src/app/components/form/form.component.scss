@@ -1,0 +1,77 @@
+@import '../../../scss/_vars.scss';
+
+
+.form-group {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  min-width: 380px;
+  padding: 25px;
+  &__items {
+    padding: 20px 15px;
+    margin-bottom: 25px;
+  }
+  &__textarea {
+    &.ng-invalid.ng-touched {
+      border: 2px solid #F8478D;
+    }
+    &.ng-valid.ng-touched {
+      border: 2px solid #13C98A;
+    }
+}
+  &__input {
+    &.ng-invalid.ng-touched {
+      border: 2px solid #F8478D;
+      &::after {
+        content: url('../../../icons/validtrue.svg');
+        position: absolute; 
+        left: 10px; 
+        bottom: -15px; 
+        z-index: 5;
+      }
+    }
+    &.ng-valid.ng-touched {
+      border: 2px solid #13C98A;
+    }
+  }
+}
+.validation {
+  position: relative;
+  display: inline-block;
+  min-width: 125px;
+  background-color:#333;
+  color: #fff; 
+  border-radius: 2px;
+  text-align: center;
+  padding: 10px 15px;
+  margin-bottom: 9px;
+  &::after {
+    content: ''; 
+    position: absolute; 
+    left: 10px; 
+    bottom: -15px; 
+    border: 8px solid transparent; 
+    border-top: 10px solid #333;
+  }
+  &__false::after {
+    content: url('../../../icons/validfolse.svg');
+    position: absolute;
+    top: 65px;
+    left: 295px;
+  }
+}
+.validation__true {
+  position: relative;
+  &::after {
+    content: url('../../../icons/validtrue.svg');
+    position: absolute;
+    top: 18px;
+    left: 295px;
+    
+  }
+}
+.btn_remuve {
+background-color: $remPlaceColor; 
+}
